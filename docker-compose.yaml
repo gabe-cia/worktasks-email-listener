@@ -1,0 +1,15 @@
+version: "3"
+networks:
+  worktasks_network:
+    driver: bridge
+
+services:
+  api: 
+    image: gabrieln/worktasksemail:1.0.0
+    container_name: worktasks_email
+    environment: 
+      MQ_URL: "amqp://worktasks_mq"
+    networks:
+      - worktasks_network
+    ports: 
+      - "8001:8001"
