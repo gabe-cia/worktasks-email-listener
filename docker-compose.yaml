@@ -1,7 +1,7 @@
 version: "3"
 networks:
   worktasks_network:
-    driver: bridge
+    external: true
 
 services:
   api: 
